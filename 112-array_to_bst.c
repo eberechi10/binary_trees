@@ -1,53 +1,24 @@
 #include "binary_trees.h"
 
 /**
- * bst_insert - Inserts a value in a Binary Search Tree.
- * @tree: Double pointer to the root node of the BST to insert the value.
- * @value: The value to store in the node to be inserted.
+ * array_to_bst - build Binary Search Tree from an array
+ * @array: pointer to first element of the array
+ * @size: number of elements in the array
  *
- * Return: A pointer to the created node, or NULL on failure.
+ * Return: Pointer to the root node of the created BST, or NULL on failure
  */
-bst_t *bst_insert(bst_t **tree, int value)
+bst_t *array_to_bst(int *array, size_t size)
 {
-    /* If the tree is empty, create a new node and make it the root */
-    if (*tree == NULL)
-    {
-        *tree = binary_tree_node(NULL, value);
-        if (*tree == NULL)
-            return (NULL);
-        return (*tree);
-    }
+	if (array == NULL || size == 0)
+		return (NULL);
 
-    /* If the value is already present, ignore it */
-    if (value == (*tree)->n)
-        return (NULL);
+	bst_t *root = NULL;
 
-    /* If the value is less than the current node's value, insert in the left subtree */
-    if (value < (*tree)->n)
-    {
-        if ((*tree)->left == NULL)
-        {
-            (*tree)->left = binary_tree_node(*tree, value);
-            if ((*tree)->left == NULL)
-                return (NULL);
-            return ((*tree)->left);
-        }
-        return (bst_insert(&((*tree)->left), value));
-    }
+	for (size_t idx = 0; idx < size; idx++)
+	{
+		bst_insert(&root, array[idx]);
+	}
 
-    /* If the value is greater than the current node's value, insert in the right subtree */
-    if (value > (*tree)->n)
-    {
-        if ((*tree)->right == NULL)
-        {
-            (*tree)->right = binary_tree_node(*tree, value);
-            if ((*tree)->right == NULL)
-                return (NULL);
-            return ((*tree)->right);
-        }
-        return (bst_insert(&((*tree)->right), value));
-    }
-
-    return (NULL); /* This line should never be reached, but added for completeness */
+	return (root);
 }
 
