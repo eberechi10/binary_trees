@@ -1,0 +1,8 @@
+Inserting the value n:
+Average Time Complexity: O(log(n))
+
+Removing the node with the value n:
+O(log(n))
+
+Searching for a node in a BST of size n:
+O(log(n))
