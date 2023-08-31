@@ -34,4 +34,3 @@ int is_bst_helper(const binary_tree_t *subtree, int lower_bound,
 	return (is_bst_helper(subtree->left, lower_bound, subtree->n) &&
 			is_bst_helper(subtree->right, subtree->n, upper_bound));
 }
-

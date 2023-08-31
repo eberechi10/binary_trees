@@ -25,4 +25,3 @@ binary_tree_t *binary_tree_rotate_left(binary_tree_t *root)
 
 	return (new_root);
 }
-

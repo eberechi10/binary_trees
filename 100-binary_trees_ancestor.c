@@ -47,9 +47,9 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *node_a,
 	while (temp_a != temp_b)
 	{
 		temp_a = temp_a->parent;
+
 		temp_b = temp_b->parent;
 	}
 
 	return ((binary_tree_t *)temp_a);
 }
-
