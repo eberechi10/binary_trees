@@ -94,6 +94,9 @@ avl_t *avl_create_node(int value);
 avl_t *avl_insert(avl_t **tree, int value);
 avl_t *array_to_avl(int *array, size_t size);
 void binary_tree_print(const binary_tree_t *tree);
+void count_height(const binary_tree_t *tree, size_t height, size_t *max);
+void count_nodes(const binary_tree_t *tree, size_t *size);
+
 
 
 #endif
