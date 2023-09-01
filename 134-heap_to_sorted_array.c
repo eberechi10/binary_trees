@@ -45,7 +45,7 @@ int *heap_to_sorted_array(heap_t *heap, size_t *size)
 	if (!arr)
 		return (NULL);
 
-	for (idx = 0; heap; i++)
+	for (idx = 0; heap; idx++)
 		arr[idx] = heap_extract(&heap);
 	return (arr);
 }
