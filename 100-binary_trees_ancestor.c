@@ -28,28 +28,22 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *node_a,
 		temp_b = temp_b->parent;
 		depth_b++;
 	}
-
 	temp_a = node_a;
 	temp_b = node_b;
-
 	while (depth_a > depth_b)
 	{
 		temp_a = temp_a->parent;
 		depth_a--;
 	}
-
 	while (depth_b > depth_a)
 	{
 		temp_b = temp_b->parent;
 		depth_b--;
 	}
-
 	while (temp_a != temp_b)
 	{
 		temp_a = temp_a->parent;
-
 		temp_b = temp_b->parent;
 	}
-
 	return ((binary_tree_t *)temp_a);
 }

@@ -96,7 +96,8 @@ avl_t *array_to_avl(int *array, size_t size);
 void binary_tree_print(const binary_tree_t *tree);
 void count_height(const binary_tree_t *tree, size_t height, size_t *max);
 void count_nodes(const binary_tree_t *tree, size_t *size);
-
+void print_at_level(const binary_tree_t *tree, void (*func)(int), int level);
+int bt_is_complete(const binary_tree_t *tree, size_t index, size_t size);
 
 
 #endif
